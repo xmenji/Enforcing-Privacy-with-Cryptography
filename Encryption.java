@@ -13,12 +13,7 @@ public class Encryption {
                 fourthDigit;
     
     public Encryption(int data){
-        if(data > 1000 && data < 9999){
             this.data = data;
-        }
-        else{
-            System.out.println("INVALID DATA");
-        } 
     }
     
     public int getData(){
@@ -50,23 +45,14 @@ public class Encryption {
     
     public void encrypt(){
     
-        this.splitDigits();
+        splitDigits();
         
         //Replace each digit with the result of adding 7 to the digit
-        firstDigit += 7;
-        secondDigit += 7;
-        thirdDigit += 7;
-        fourthDigit += 7;
-        //TEST
-        //printEncryptedData(firstDigit, secondDigit, thirdDigit, fourthDigit);
-        
         //Get the remainder after dividing new value by 10
-        firstDigit = (firstDigit % 10);
-        secondDigit = (secondDigit % 10);
-        thirdDigit = (thirdDigit % 10);
-        fourthDigit = (fourthDigit % 10);
-         //TEST
-        //printEncryptedData(firstDigit, secondDigit, thirdDigit, fourthDigit);
+        firstDigit = (firstDigit + 7) % 10;
+        secondDigit = (secondDigit + 7) % 10;
+        thirdDigit = (thirdDigit + 7) % 10;
+        fourthDigit = (fourthDigit + 7) % 10;
         
         //Swap the first digit with the third, and swap the second digit with 
         //the fourth.
