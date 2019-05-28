@@ -14,13 +14,21 @@ public class Cryptography {
         int userData;
         
         //Get user data
-        System.out.print("Enter 4-digit number: ");
+        System.out.print("Enter 4-digit number for encryption: ");
         userData = input.nextInt();
         
-        Encryption data1 = new Encryption(userData);
+        Encryption dataToEncrypt = new Encryption(userData);
         
         //Encrypt user data        
-        data1.encrypt();
+        dataToEncrypt.encrypt();
+       
+        System.out.print("Enter 4-digit number for decryption: ");
+        userData = input.nextInt();
+        
+        Decryption dataToDecrypt = new Decryption(userData);
+        
+        //Decrypt user data
+        dataToDecrypt.Decrypt();
     }
     
 }
